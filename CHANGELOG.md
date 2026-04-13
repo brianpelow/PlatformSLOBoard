@@ -1,0 +1,15 @@
+# Changelog
+
+## [Unreleased]
+
+## [0.1.0] - 2026-04-12
+
+### Added
+- FastAPI backend with SLO aggregation engine
+- Dynatrace SLO collector
+- PagerDuty incident collector
+- Error budget burn rate calculator
+- SLO status classification (healthy/warning/critical/breached)
+- Executive summary endpoint with AI narrative
+- REST API with /health, /slos, /services, /summary endpoints
+- Nightly agent workflow
