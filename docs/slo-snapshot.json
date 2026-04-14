@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-04-14T04:45:37.837118",
+  "date": "2026-04-14",
+  "overall_score": 63,
+  "total_slos": 6,
+  "healthy": 3,
+  "warning": 1,
+  "critical": 1,
+  "breached": 1,
+  "slos": [
+    {
+      "name": "Payments API Availability",
+      "service": "payments-service",
+      "target": 99.9,
+      "evaluated_percentage": 99.94,
+      "error_budget_remaining": 42.0,
+      "burn_rate": 0.8,
+      "status": "healthy",
+      "period_days": 30
+    },
+    {
+      "name": "Payments API Latency P99",
+      "service": "payments-service",
+      "target": 99.5,
+      "evaluated_percentage": 99.51,
+      "error_budget_remaining": 18.0,
+      "burn_rate": 2.1,
+      "status": "warning",
+      "period_days": 30
+    },
+    {
+      "name": "FX Rate Service Availability",
+      "service": "fx-rate-service",
+      "target": 99.9,
+      "evaluated_percentage": 99.71,
+      "error_budget_remaining": 8.0,
+      "burn_rate": 3.8,
+      "status": "critical",
+      "period_days": 30
+    },
+    {
+      "name": "Trading Engine Throughput",
+      "service": "trading-engine",
+      "target": 99.0,
+      "evaluated_percentage": 99.12,
+      "error_budget_remaining": 55.0,
+      "burn_rate": 0.5,
+      "status": "healthy",
+      "period_days": 30
+    },
+    {
+      "name": "Audit Service Availability",
+      "service": "audit-service",
+      "target": 99.99,
+      "evaluated_percentage": 99.98,
+      "error_budget_remaining": 25.0,
+      "burn_rate": 1.2,
+      "status": "healthy",
+      "period_days": 30
+    },
+    {
+      "name": "Auth Service Latency P95",
+      "service": "auth-service",
+      "target": 99.5,
+      "evaluated_percentage": 98.9,
+      "error_budget_remaining": 0.0,
+      "burn_rate": 12.5,
+      "status": "breached",
+      "period_days": 30
+    }
+  ]
+}
