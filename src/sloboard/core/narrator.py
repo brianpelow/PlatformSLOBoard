@@ -17,8 +17,8 @@ def generate_reliability_narrative(
         return _fallback_narrative(summary, slos, industry)
 
     try:
-        import anthropic
-        client = anthropic.Anthropic(api_key=api_key)
+        from openai import OpenAI
+        client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key)
 
         breached = [s for s in slos if s.status == "breached"]
         critical = [s for s in slos if s.status == "critical"]
@@ -48,12 +48,12 @@ Write a 3-paragraph executive briefing that:
 Use language appropriate for a CTO or CFO audience in a regulated {industry} environment.
 Be specific, concise, and action-oriented. Reference compliance implications where relevant."""
 
-        message = client.messages.create(
-            model="claude-sonnet-4-20250514",
+        message = client.chat.completions.create(
+            model="meta-llama/llama-3.1-8b-instruct:free",
             max_tokens=500,
             messages=[{"role": "user", "content": prompt}],
         )
-        return message.content[0].text
+        return message.choices[0].message.content
 
     except Exception:
         return _fallback_narrative(summary, slos, industry)

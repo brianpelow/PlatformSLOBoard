@@ -12,7 +12,7 @@ class SLOBoardConfig(BaseModel):
     dynatrace_url: str = Field("", description="Dynatrace environment URL")
     dynatrace_token: str = Field("", description="Dynatrace API token")
     pagerduty_token: str = Field("", description="PagerDuty API token")
-    anthropic_api_key: str = Field("", description="Anthropic API key")
+    openrouter_api_key: str = Field("", description="OpenRouter API key")
     industry: str = Field("fintech", description="Industry context")
     lookback_days: int = Field(30, description="Days of history to analyse")
     host: str = Field("0.0.0.0", description="API server host")
@@ -24,7 +24,7 @@ class SLOBoardConfig(BaseModel):
             dynatrace_url=os.environ.get("DYNATRACE_URL", ""),
             dynatrace_token=os.environ.get("DYNATRACE_TOKEN", ""),
             pagerduty_token=os.environ.get("PAGERDUTY_TOKEN", ""),
-            anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY", ""),
+            openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", ""),
             industry=os.environ.get("SLO_INDUSTRY", "fintech"),
         )
 
